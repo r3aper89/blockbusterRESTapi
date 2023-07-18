@@ -20,7 +20,7 @@ the members database will have all the members and the videos they rented.
 | 5   | Penguins of Madagascar            | rented    |
 
 /members
-| id  | name  | video_id |
+| id  | name  | video_id |w
 | --- | ----- | -------- |
 | 1   | james | 5        |
 | 2   | tim   | 2        |

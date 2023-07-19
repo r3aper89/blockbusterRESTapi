@@ -3,7 +3,7 @@ This project is a springboot project that simulates a BlockBuster video store. w
 
 The project is divided into small steps. Below you can find the steps and the description of each step. Each step is saved as a git branch, switch branch to see the progress of each step.
 
-## Step 1: describe
+## Step 1 - describe
 describe the overarching project.
 
 ## Step 2 – setup project (make sure it builds)
@@ -15,17 +15,14 @@ make sure the project builds.
 ## step 3 – dto design all dtos
 design all dtos for the project.
 
-[Spring Boot DTO Example Tutorial](https://www.youtube.com/watch?v=THv-TI1ZNMk)
-
 ## Step 4 - add controllers with swagger using dtos
-- Service layer added which returns hardcoded responses (check it build and works with swagger)
+Service layer added which returns hardcoded responses (check it build and works with swagger)
 
 ## Step 5 – dao
-- Implement doa and replace service hardcoding with hardcoding in dao
+Implement doa and replace service hardcoding with hardcoding in dao
 
 ## Step 6 – database
-- Use JPA to design entities 
-- Replace dao hardcoding with jpa repositories
+Use JPA to design entities and replace dao hardcoding with jpa repositories
 
 # resources
 Master Java Web Services and REST API with Spring Boot

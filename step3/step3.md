@@ -4,3 +4,6 @@
     - ResponseEntity <DTOClass>
     - springboot will automatically serialise the dto to json
 
+# dto design
+![DTOExample](./attachments/dtoExample.png)
+

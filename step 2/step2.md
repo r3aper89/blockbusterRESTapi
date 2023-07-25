@@ -1,6 +1,8 @@
 # setup project – setup project (make sure it builds)
 
 document the steps taken to setup the project.
+step 2 mirrors principles from orileys course master jave web; chapter 6 steps 1-8
+
 
 ## task 1
 use springboot initializer (website) to create a project
@@ -25,17 +27,13 @@ dependencies:
 - spring boot devtools
 
 ## task 2 
-add folders: repository, entities, services, controllers, dtos, adapters, model
+this section is basic version of the project.
 
-## task 3 
-setup git branches: on github add branches for each step.
+controller: takes care of or end points
 
-## task 4
-make sure the project builds
-RUN
-blockbuster/src/main/java/com/example/videostore/blockbuster/BlockbusterApplication.java
+DAO Pattern: DAO stands for data access object. Usually, the DAO class is responsible for two concepts: encapsulating the details of the persistence layer and providing a CRUD interface for a single entity.
+
 
 # reference video
-chapter 6 / 
-- Step 01 - Initializing a REST API Project with Spring Boot
-- Step 06 - Designing the REST API for Social Media Application
+<https://learning.oreilly.com/videos/master-java-web/9781789130133/9781789130133-video6_9/>
+chapter 6 / steps 1-8

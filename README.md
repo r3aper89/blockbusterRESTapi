@@ -4,7 +4,7 @@ This project is a springboot project that simulates a BlockBuster video store. w
 
 The project is divided into small steps. Below you can find the steps and the description of each step. Each step is saved as a git branch, switch branch to see the progress of each step.
 
-# Step 1
+# STEP 1
 
 ## Description
 
@@ -96,9 +96,10 @@ step 2 mirrors principles from orileys course master jave web; chapter 6 steps 1
 <https://learning.oreilly.com/videos/master-java-web/9781789130133/9781789130133-video6_9/>
 
 
-## step 3 – dto design all dtos
-
+# STEP 3
 design all dtos for the project.
+
+
 
 ## Step 4 - add controllers with swagger using dtos
 

@@ -1,41 +1,50 @@
-# springboot-blockbuster
+# STEP 2
+sets up a basic spring boot project with the following layers controller, dto, and services.
 
-This project is a springboot project that simulates a BlockBuster video store. where members can rent a movie and return it.
+## task 1
 
-The project is divided into small steps. Below you can find the steps and the description of each step. Each step is saved as a git branch, switch branch to see the progress of each step.
+use springboot initializer (website) to create a project
+<https://start.spring.io>
 
-## Step 1 - describe
+select the following:
+Project: Maven
+language: java
+Spring Boot: 3.1.1
+Project Metadata:
 
-describe the overarching project.
+- group com.example.videostore.blockbuster
+- artifact: blockbuster
+- name: blockbuster
+- description: Blockbuster video store
+- package name: com.example.videostore.blockbuster
+- java: 17
+- packaging: jar
+dependencies:
+- spring web
+- spring data jpa
+- h2 database
+- spring boot devtools
 
-## Step 2 – setup project (make sure it builds)
+## task 2
 
-use springboot initializer (website) to create a project.
-add folders (repository, entities, services, controllers, dtos, adapters).
-on github add branches for each step.
-make sure the project builds.
+create the /controller, /dto, and /services classes/layers.
 
-## step 3 – dto design all dtos
+/controller
+the controller class creates paths to localhost/members and localhost/videos areas each return a json object listing all the videos and members in from the service class.
 
-design all dtos for the project.
+/dto
+the DTO (data transfer object) class houses schema objects for the table.
+Video(int videoId, String title, String status)
+Member(int memberId, String name, int videoId)
 
-## Step 4 - add controllers with swagger using dtos
+/services
+the services class is a combination of the DAO and service layer.
+this layer also houses the data for the database.
 
-Service layer added which returns hardcoded responses (check it build and works with swagger)
+DAO (Data Access Object) houses a list of operations that interacts with the data such as CRUD operations.
+The service layer, references the DAO to access the data and implements business logic according to the business rules (for example, checking if a book already exists before trying to add it).
 
-## Step 5 – dao
+# reference videos
+step 2 mirrors principles from orileys course master jave web; chapter 6 steps 1-8.
+<https://learning.oreilly.com/videos/master-java-web/9781789130133/9781789130133-video6_9/>
 
-Implement doa and replace service hardcoding with hardcoding in dao
-
-## Step 6 – database
-
-Use JPA to design entities and replace dao hardcoding with jpa repositories
-
-# resources
-
-Master Java Web Services and REST API with Spring Boot
-
-<https://learning.oreilly.com/videos/master-java-web/>
-
-git repo
-<https://github.com/packtpublishing/master-java-web-services-and-rest-api-with-spring-boot>

@@ -9,7 +9,7 @@ public class Video {
     private String title;
     private String status;
 
-    // contractor
+    // constructor
     public Video(int videoId, String title, String status) {
         super();
         this.videoId = videoId;
@@ -18,7 +18,6 @@ public class Video {
     }
 
     // getters and setters
-
     public int getVideoId() {
         return this.videoId;
     }

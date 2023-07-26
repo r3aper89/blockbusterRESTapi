@@ -10,17 +10,16 @@ import com.example.videostore.blockbuster.controller.*;
 import com.example.videostore.blockbuster.service.*;
 
 @RestController
-public class VideoController {
+public class MemberController {
 
-    // use the VideoDaoService in the urls
-    public VideoDaoService service;
+    public MemberDaoService service;
 
-    public VideoController(VideoDaoService service) {
+    public MemberController(MemberDaoService service) {
         this.service = service;
     }
 
-    @GetMapping("/videos")
-    public List<Video> listAllVideos() {
-        return service.getAllVideos();
+    @GetMapping("/members")
+    public List<Member> listAllVideos() {
+        return service.getAllMembers();
     }
 }

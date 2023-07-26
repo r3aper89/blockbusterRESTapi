@@ -1,28 +1,26 @@
 package com.example.videostore.blockbuster.dto;
 
-import java.util.Objects;
-
-//creating a java bean that is a combination of dto and model with boiler
-
 public class Member {
 
-    private Long memberId;
+    // variables
+    private int memberId;
     private String name;
-    private Video videoId;
+    private int videoId;
 
     // constructor
-    public Member(Long memberId, String name, Video videoId) {
+    public Member(int memberId, String name, int videoId) {
+        super();
         this.memberId = memberId;
         this.name = name;
-        this.video = videoId;
+        this.videoId = videoId;
     }
 
-    // getters & setters
-    public Long getMemberId() {
+    // getters and setters
+    public int getMemberId() {
         return this.memberId;
     }
 
-    public void setMemberId(Long memberId) {
+    public void setMemberId(int memberId) {
         this.memberId = memberId;
     }
 
@@ -34,15 +32,15 @@ public class Member {
         this.name = name;
     }
 
-    public Video getVideoId() {
+    public int getVideoId() {
         return this.videoId;
     }
 
-    public void setVideoId(Video videoId) {
+    public void setVideoId(int videoId) {
         this.videoId = videoId;
     }
 
-    // toString
+    // to string
     @Override
     public String toString() {
         return "{" +

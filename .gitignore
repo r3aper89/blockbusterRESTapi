@@ -1,1 +1,7 @@
 springboot-blockbuster.code-workspace
+.DS_Store
+blockbuster/.DS_Store
+blockbuster/src/.DS_Store
+blockbuster/src/main/.DS_Store
+blockbuster/src/main/java/com/example/videostore/.DS_Store
+blockbuster/src/main/java/com/example/videostore/blockbuster/.DS_Store

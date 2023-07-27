@@ -97,13 +97,14 @@ localhost:8091/members
 
 
 ## reference videos
-step 2 mirrors principles from orileys course master jave web; chapter 6 steps 1-8.
+orileys course master jave web; chapter 6 steps 1-8.
 <https://learning.oreilly.com/videos/master-java-web/9781789130133/9781789130133-video6_9/>
 
 
 # Step 3
+Goal use a response entity on the Dto class
 
-## task 0
+## task 1
 - ✅increment videoId and memberId automatically
   
 - ✅list all member or videos
@@ -114,29 +115,16 @@ step 2 mirrors principles from orileys course master jave web; chapter 6 steps 1
   - GET /videos/{id}
   - GET /members/{id}
 
-- ✅using post api add a new member and video
+- ✅using post api add a new member and video (uses Response entity)
   - POST /videos
   - POST /members
   
-- delete a specific member and video by id
+- ✅delete a specific member and video by id
   - DELETE /members/{id}
   - DELETE /videos/{id}
 
-
-## task 1
-In the controller layer add the ResponseEntity to return the correct response status for the following operations:
-- creating a new member and movie, response code should be 201.
-
-/controller
-- ResponseEntity 
-
-
-
-## task 2
-convert dto layer to lombok 
-
-
-
+## reference videos
+orileys course master jave web; chapter 6 steps 8-14.
 
 # Step 4 
 swagger

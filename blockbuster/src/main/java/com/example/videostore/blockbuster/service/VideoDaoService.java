@@ -43,4 +43,10 @@ public class VideoDaoService {
         return videos.stream().filter(predicate).findFirst().get();
     }
 
+    // delete video by id
+    public void deleteVidById(int id) {
+        Predicate<? super VideoDto> predicate = video -> video.getVideoId().equals(id);
+        videos.removeIf(predicate);
+    }
+
 }

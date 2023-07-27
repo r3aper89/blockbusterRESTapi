@@ -117,10 +117,6 @@ step 2 mirrors principles from orileys course master jave web; chapter 6 steps 1
 - ✅using post api add a new member and video
   - POST /videos
   - POST /members
-
-- create a new member and video
-  - GET /videos
-  - GET /members
   
 - delete a specific member and video by id
   - DELETE /members/{id}

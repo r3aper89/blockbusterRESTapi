@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.catalina.connector.Response;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,6 +39,12 @@ public class VideoController {
     @GetMapping("/videos/{id}")
     public VideoDto showVideoById(@PathVariable int id) {
         return service.findVideoById(id);
+    }
+
+    // delete by id
+    @DeleteMapping("/videos/{id}")
+    public void deleteVideo(@PathVariable int id) {
+        service.deleteVidById(id);
     }
 
     // add new video

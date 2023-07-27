@@ -2,7 +2,7 @@ package com.example.videostore.blockbuster.dto;
 
 //creating a java bean that is a combination of dto and model with boiler
 
-public class Video {
+public class VideoDto {
 
     // variables
     private Integer videoId;
@@ -10,7 +10,7 @@ public class Video {
     private String status;
 
     // constructor
-    public Video(Integer videoId, String title, String status) {
+    public VideoDto(Integer videoId, String title, String status) {
         super();
         this.videoId = videoId;
         this.title = title;

@@ -14,30 +14,30 @@ import com.example.videostore.blockbuster.service.*;
 @Component
 public class MemberDaoService {
 
-    private static List<Member> members = new ArrayList<>();
+    private static List<MemberDto> members = new ArrayList<>();
 
     private static int memberIdCount = 0;
 
     static {
-        members.add(new Member(++memberIdCount, "James", 5));
-        members.add(new Member(++memberIdCount, "Tim", 2));
+        members.add(new MemberDto(++memberIdCount, "James", 5));
+        members.add(new MemberDto(++memberIdCount, "Tim", 2));
     }
 
     // add new member
-    public Member addMember(Member member) {
+    public MemberDto addMember(MemberDto member) {
         member.setMemberId(++memberIdCount); // auto increment memberid
         members.add(member);
         return member;
     }
 
     // get all videos
-    public List<Member> findAllMembers() {
+    public List<MemberDto> findAllMembers() {
         return members;
     }
 
     // get video by id
-    public Member findMemberById(int id) {
-        Predicate<? super Member> predicate = member -> member.getVideoId().equals(id);
+    public MemberDto findMemberById(int id) {
+        Predicate<? super MemberDto> predicate = member -> member.getVideoId().equals(id);
         return members.stream().filter(predicate).findFirst().get();
     }
 

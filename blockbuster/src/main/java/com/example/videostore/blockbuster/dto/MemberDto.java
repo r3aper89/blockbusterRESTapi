@@ -1,6 +1,6 @@
 package com.example.videostore.blockbuster.dto;
 
-public class Member {
+public class MemberDto {
 
     // variables
     private Integer memberId;
@@ -8,7 +8,7 @@ public class Member {
     private Integer videoId;
 
     // constructor
-    public Member(Integer memberId, String name, Integer videoId) {
+    public MemberDto(Integer memberId, String name, Integer videoId) {
         super();
         this.memberId = memberId;
         this.name = name;

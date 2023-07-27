@@ -27,21 +27,21 @@ public class MemberController {
 
     // list all members
     @GetMapping("/members")
-    public List<Member> showAllMembers() {
+    public List<MemberDto> showAllMembers() {
         return service.findAllMembers();
     }
 
     // get member by id
     @GetMapping("/members/{id}")
-    public Member showMemberById(@PathVariable int id) {
+    public MemberDto showMemberById(@PathVariable int id) {
         return service.findMemberById(id);
     }
 
     // add new video
     // POST {name:"...", videoId"..."} memberId will auto generate
     @PostMapping("/members")
-    public ResponseEntity<Video> addNewMember(@RequestBody Member member) {
-        Member saveMember = service.addMember(member);
+    public ResponseEntity<VideoDto> addNewMember(@RequestBody MemberDto member) {
+        MemberDto saveMember = service.addMember(member);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(saveMember.getMemberId())

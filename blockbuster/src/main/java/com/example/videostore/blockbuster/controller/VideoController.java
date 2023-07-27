@@ -30,21 +30,21 @@ public class VideoController {
 
     // list all videos
     @GetMapping("/videos")
-    public List<Video> showAllVideos() {
+    public List<VideoDto> showAllVideos() {
         return service.findAllVideos();
     }
 
     // get vid by id
     @GetMapping("/videos/{id}")
-    public Video showVideoById(@PathVariable int id) {
+    public VideoDto showVideoById(@PathVariable int id) {
         return service.findVideoById(id);
     }
 
     // add new video
     // POST {title:"...", status"..."} videoId will auto generate
     @PostMapping("/videos")
-    public ResponseEntity<Video> addNewVideo(@RequestBody Video video) {
-        Video saveVideo = service.addVideo(video);
+    public ResponseEntity<VideoDto> addNewVideo(@RequestBody VideoDto video) {
+        VideoDto saveVideo = service.addVideo(video);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
                 .path("/{id}")
                 .buildAndExpand(saveVideo.getVideoId())

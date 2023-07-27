@@ -4,7 +4,7 @@ This project is a springboot project that simulates a BlockBuster video store. w
 
 The project is divided into small steps. Below you can find the steps and the description of each step. Each step is saved as a git branch, switch branch to see the progress of each step.
 
-# STEP 1
+# Step 1
 
 ## Description
 
@@ -44,7 +44,6 @@ the scenario will demonstrate CRUD principles.
 - member will cancel membership. (DELETE)
 
 # STEP 2
-
 sets up a basic spring boot project with the following layers controller, dto, and services.
 
 ## task 1
@@ -72,7 +71,6 @@ dependencies:
 - spring boot devtools
 
 ## task 2
-
 create the /controller, /dto, and /services classes/layers.
 
 /controller
@@ -90,34 +88,55 @@ this layer also houses the data for the database.
 DAO (Data Access Object) houses a list of operations that interacts with the data such as CRUD operations.
 The service layer, references the DAO to access the data and implements business logic according to the business rules (for example, checking if a book already exists before trying to add it).
 
-# reference videos
+## test
+localhost:8091/videos
+-returns json of all the videos
 
+localhost:8091/members
+-returns json of all mebers
+
+
+## reference videos
 step 2 mirrors principles from orileys course master jave web; chapter 6 steps 1-8.
 <https://learning.oreilly.com/videos/master-java-web/9781789130133/9781789130133-video6_9/>
 
 
-# STEP 3
-design all dtos for the project.
+# Step 3
+
+## task 0
+- ✅increment videoId and memberId automatically
+  
+- ✅list all member and videos
+  - GET /members
+  - GET /videos
+
+- retrieve a specific member and video by id
+  - POST /videos/{id}
+  - POST /members/{id}
+
+- create a new member and video
+  - GET /videos
+  - GET /members
+  
+- delete a specific member and video by id
+  - DELETE /members/{id}
+  - DELETE /videos/{id}
+
+
+## task 1
+In the controller layer add the ResponseEntity to return the correct response status for the following operations:
+- creating a new member and movie, response code should be 201.
+
+/controller
+- ResponseEntity 
 
 
 
-## Step 4 - add controllers with swagger using dtos
+## task 2
+convert dto layer to lombok 
 
-Service layer added which returns hardcoded responses (check it build and works with swagger)
 
-## Step 5 – dao
 
-Implement doa and replace service hardcoding with hardcoding in dao
 
-## Step 6 – database
-
-Use JPA to design entities and replace dao hardcoding with jpa repositories
-
-# resources
-
-Master Java Web Services and REST API with Spring Boot
-
-<https://learning.oreilly.com/videos/master-java-web/>
-
-git repo
-<https://github.com/packtpublishing/master-java-web-services-and-rest-api-with-spring-boot>
+# Step 4 
+swagger

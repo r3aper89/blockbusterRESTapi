@@ -41,14 +41,15 @@ public class VideoController {
     }
 
     // add new video
-    // @PostMapping("/videos")
-    // public ResponseEntity<Video> createVideo(@RequestBody Video video) {
-    // Video saveVideo = service.save(video);
-    // URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-    // .path("/{id}")
-    // .buildAndExpand(saveVideo.getVideoId())
-    // .toUri();
-    // return ResponseEntity.created(location).build();
-    // }
+    // POST {title:"...", status"..."} videoId will auto generate
+    @PostMapping("/videos")
+    public ResponseEntity<Video> addNewVideo(@RequestBody Video video) {
+        Video saveVideo = service.addVideo(video);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(saveVideo.getVideoId())
+                .toUri();
+        return ResponseEntity.created(location).build();
+    }
 
 }

@@ -106,13 +106,17 @@ step 2 mirrors principles from orileys course master jave web; chapter 6 steps 1
 ## task 0
 - ✅increment videoId and memberId automatically
   
-- ✅list all member and videos
+- ✅list all member or videos
   - GET /members
   - GET /videos
 
-- retrieve a specific member and video by id
-  - POST /videos/{id}
-  - POST /members/{id}
+- ✅find a member or video by id
+  - GET /videos/{id}
+  - GET /members/{id}
+
+- ✅using post api add a new member and video
+  - POST /videos
+  - POST /members
 
 - create a new member and video
   - GET /videos

@@ -25,9 +25,9 @@ public class VideoDaoService {
         videos.add(new Video(++videoIdCount, "Penguins of Madagascar", "Rented"));
     }
 
-    // auto increase video id counter
-    public Video save(Video video) {
-        video.setVideoId(++videoIdCount);
+    // add new video
+    public Video addVideo(Video video) {
+        video.setVideoId(++videoIdCount);// auto increment video id
         videos.add(video);
         return video;
     }

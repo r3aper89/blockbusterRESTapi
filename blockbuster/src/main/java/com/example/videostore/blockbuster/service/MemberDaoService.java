@@ -2,6 +2,8 @@ package com.example.videostore.blockbuster.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
+
 import org.springframework.stereotype.Component;
 
 //local packages
@@ -21,17 +23,22 @@ public class MemberDaoService {
         members.add(new Member(++memberIdCount, "Tim", 2));
     }
 
-    // auto increase member id counter
-    public Member save(Member member) {
-        member.setMemberId(++memberIdCount);
+    // add new member
+    public Member addMember(Member member) {
+        member.setMemberId(++memberIdCount); // auto increment memberid
         members.add(member);
         return member;
     }
 
     // get all videos
-    public List<Member> getAllMembers() {
+    public List<Member> findAllMembers() {
         return members;
     }
 
-    // 
+    // get video by id
+    public Member findMemberById(int id) {
+        Predicate<? super Member> predicate = member -> member.getVideoId().equals(id);
+        return members.stream().filter(predicate).findFirst().get();
+    }
+
 }

@@ -102,7 +102,9 @@ orileys course master jave web; chapter 6 steps 1-8.
 
 
 # Step 3
-Goal use a response entity on the Dto class
+Goal use ResponseEntity<dtoClass> on the Dto class.
+/controller/*.java
+@PostMapping
 
 ## task 1
 - ✅increment videoId and memberId automatically
@@ -123,8 +125,24 @@ Goal use a response entity on the Dto class
   - DELETE /members/{id}
   - DELETE /videos/{id}
 
+- member will rent a movie and return it.(PUT)
+  - video/status: from available to rented.
+  - member/video_id: from null to video_id.
+
 ## reference videos
 orileys course master jave web; chapter 6 steps 8-14.
 
 # Step 4 
-swagger
+add swagger to pom.xml
+
+-update pom.xml
+
+
+# step 5
+seperate teh service and DOA layer 
+/service
+/DAO
+
+# step 6
+/resouces
+  /data

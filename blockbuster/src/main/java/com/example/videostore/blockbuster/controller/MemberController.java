@@ -4,6 +4,7 @@ import java.net.URI;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +38,12 @@ public class MemberController {
         return service.findMemberById(id);
     }
 
+    // delete by id
+    @DeleteMapping("/members/{id}")
+    public void deleteMember(@PathVariable int id) {
+        service.deleteMemberById(id);
+    }
+
     // add new video
     // POST {name:"...", videoId"..."} memberId will auto generate
     @PostMapping("/members")
@@ -48,7 +55,5 @@ public class MemberController {
                 .toUri();
         return ResponseEntity.created(location).build();
     }
-
-    // list specific member
 
 }

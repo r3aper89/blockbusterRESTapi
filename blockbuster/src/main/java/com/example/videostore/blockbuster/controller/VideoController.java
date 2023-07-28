@@ -44,7 +44,7 @@ public class VideoController {
     // delete by id
     @DeleteMapping("/videos/{id}")
     public void deleteVideo(@PathVariable int id) {
-        service.deleteVidById(id);
+        service.deleteVideoById(id);
     }
 
     // add new video

@@ -123,8 +123,15 @@ Goal use a response entity on the Dto class
   - DELETE /members/{id}
   - DELETE /videos/{id}
 
+- ✅member will rent a movie and return it.(PUT)
+  - PUT /members/{id} videoId
+  - PUT /videos/{id} status
+
+
 ## reference videos
 orileys course master jave web; chapter 6 steps 8-14.
 
 # Step 4 
 swagger
+
+

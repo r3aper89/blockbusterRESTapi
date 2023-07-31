@@ -47,4 +47,15 @@ public class MemberDaoService {
         members.removeIf(predicate);
     }
 
+    // update member videoId
+    public MemberDto changeMemberVideoId(Integer id, Integer videoId) {
+        for (MemberDto member : members) {
+            if (member.getMemberId().equals(id)) {
+                member.setVideoId(videoId);
+                return member;
+            }
+        }
+        return null;
+    }
+
 }

@@ -49,4 +49,14 @@ public class VideoDaoService {
         videos.removeIf(predicate);
     }
 
+    // update video status
+    public VideoDto changeVideoStatus(Integer id, String status) {
+        for (VideoDto video : videos) {
+            if (video.getVideoId().equals(id)) {
+                video.setStatus(status);
+                return video;
+            }
+        }
+        return null;
+    }
 }

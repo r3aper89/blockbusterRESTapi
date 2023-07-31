@@ -132,6 +132,22 @@ Goal use a response entity on the Dto class
 orileys course master jave web; chapter 6 steps 8-14.
 
 # Step 4 
-swagger
+add swagger
+
+## tasks 0
+add swagger to Pom.xml
+
+- springdoc <https://springdoc.org>
+- copy step 2 into pom.xml
+
+localhost:8091/swagger-ui/index.html
+
+# step 5 
+
+
+
+
+# step 6
+
 
 

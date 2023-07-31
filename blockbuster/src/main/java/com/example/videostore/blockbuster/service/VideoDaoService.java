@@ -44,9 +44,19 @@ public class VideoDaoService {
     }
 
     // delete video by id
-    public void deleteVidById(int id) {
+    public void deleteVideoById(int id) {
         Predicate<? super VideoDto> predicate = video -> video.getVideoId().equals(id);
         videos.removeIf(predicate);
     }
 
+    // update video status
+    public VideoDto changeVideoStatus(Integer id, String status) {
+        for (VideoDto video : videos) {
+            if (video.getVideoId().equals(id)) {
+                video.setStatus(status);
+                return video;
+            }
+        }
+        return null;
+    }
 }

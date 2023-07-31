@@ -30,15 +30,32 @@ public class MemberDaoService {
         return member;
     }
 
-    // get all videos
+    // get member by id
     public List<MemberDto> findAllMembers() {
         return members;
     }
 
-    // get video by id
+    // get member by id
     public MemberDto findMemberById(int id) {
         Predicate<? super MemberDto> predicate = member -> member.getVideoId().equals(id);
         return members.stream().filter(predicate).findFirst().get();
+    }
+
+    // delete member by id
+    public void deleteMemberById(int id) {
+        Predicate<? super MemberDto> predicate = member -> member.getMemberId().equals(id);
+        members.removeIf(predicate);
+    }
+
+    // update member videoId
+    public MemberDto changeMemberVideoId(Integer id, Integer videoId) {
+        for (MemberDto member : members) {
+            if (member.getMemberId().equals(id)) {
+                member.setVideoId(videoId);
+                return member;
+            }
+        }
+        return null;
     }
 
 }

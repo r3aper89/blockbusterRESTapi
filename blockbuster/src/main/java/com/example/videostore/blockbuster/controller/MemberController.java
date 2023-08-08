@@ -10,62 +10,33 @@ import com.example.videostore.blockbuster.dao.*;
 //imported
 import java.net.URI;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 //interact with the browser 
 
 @RestController
+@RequestMapping("/members")
 public class MemberController {
 
-    public MemberService service;
+    public MemberService memberService;
 
-    public MemberController(MemberService service) {
-        this.service = service;
+    @Autowired
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
     }
 
-    // list all members
-    @GetMapping("/members")
-    public List<MemberDto> showAllMembers() {
-        return service.findAllMembers();
+    // Read: get
+    // Description: Retrieves the details of a specific item by providing its unique
+    // `id`.
+    @GetMapping("/{id}")
+    public ResponseEntity<MemberDto> getMember(@PathVariable Long id) {
+        return ResponseEntity.ok(memberService.getMember(id));
     }
-
-    // // get member by id
-    // @GetMapping("/members/{id}")
-    // public MemberDto showMemberById(@PathVariable int id) {
-    // return service.findMemberById(id);
-    // }
-
-    // // delete by id
-    // @DeleteMapping("/members/{id}")
-    // public void deleteMember(@PathVariable int id) {
-    // service.deleteMemberById(id);
-    // }
-
-    // // add new video
-    // // POST {name:"...", videoId"..."} memberId will auto generate
-    // @PostMapping("/members")
-    // public ResponseEntity<MemberDto> addNewMember(@RequestBody MemberDto member)
-    // {
-    // MemberDto saveMember = service.addMember(member);
-    // URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-    // .path("/{id}")
-    // .buildAndExpand(saveMember.getMemberId())
-    // .toUri();
-    // return ResponseEntity.created(location).build();
-    // }
-
-    // @PutMapping("/members/{id}")
-    // public ResponseEntity<MemberDto> updateMemberVideoId(@PathVariable Integer
-    // id, @RequestBody MemberDto member) {
-    // MemberDto updateMemberVideo =
-    // service.changeMemberVideoId(Integer.valueOf(id), member.getVideoId());
-    // if (updateMemberVideo != null) {
-    // return new ResponseEntity<>(updateMemberVideo, HttpStatus.OK);
-    // } else {
-    // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    // }
-    // }
 
 }

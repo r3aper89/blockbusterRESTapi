@@ -3,16 +3,19 @@ package com.example.videostore.blockbuster.entity;
 import lombok.*;
 import jakarta.persistence.*; //fromally javax
 
+@Data
 @Entity
 @Table(name = "MEMBERS")
-public class MemberEntity {
+public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer memberId;
+    private Long memberId;
 
+    @Column
     private String memberName;
 
-    private Integer videoId;
+    @Column
+    private Long videoId;
 
 }

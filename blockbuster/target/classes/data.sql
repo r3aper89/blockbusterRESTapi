@@ -15,7 +15,7 @@
 
 
 insert into members (memberId, memberName, videoId) 
-values (1, 'James', '5');
+values (1, 'James', 5);
 
 insert into members (memberId, memberName, videoId) 
-values (1, 'Tim', '2');
+values (1, 'Tim', 2);

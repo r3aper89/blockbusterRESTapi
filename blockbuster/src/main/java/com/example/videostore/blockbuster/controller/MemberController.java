@@ -1,71 +1,51 @@
 package com.example.videostore.blockbuster.controller;
 
-import java.net.URI;
+import com.example.videostore.blockbuster.dao.MemberDao;
+//local
+import com.example.videostore.blockbuster.dto.*;
+import com.example.videostore.blockbuster.service.*;
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
+import org.springframework.web.bind.annotation.*;
 
-// local packages
-import com.example.videostore.blockbuster.dto.*;
-import com.example.videostore.blockbuster.controller.*;
-import com.example.videostore.blockbuster.service.*;
+//interact with the browser 
 
 @RestController
+@RequestMapping("/members")
 public class MemberController {
 
-    public MemberDaoService service;
+    @Autowired
+    private MemberService memberService;
 
-    public MemberController(MemberDaoService service) {
-        this.service = service;
+    @Autowired
+    private MemberDao memberDao;
+
+    @PostMapping
+    public ResponseEntity<MemberDto> createMember(@RequestBody MemberDto memberDto) {
+        return ResponseEntity.ok(memberService.createMember(memberDto));
     }
 
-    // list all members
-    @GetMapping("/members")
-    public List<MemberDto> showAllMembers() {
-        return service.findAllMembers();
+    @GetMapping("/{id}")
+    public ResponseEntity<MemberDto> getMemberById(@PathVariable Long id) {
+        return ResponseEntity.ok(memberService.getMemberById(id));
     }
 
-    // get member by id
-    @GetMapping("/members/{id}")
-    public MemberDto showMemberById(@PathVariable int id) {
-        return service.findMemberById(id);
+    @GetMapping
+    public ResponseEntity<List<MemberDto>> getAllMembers() {
+        return ResponseEntity.ok(memberService.getAllMembers());
     }
 
-    // delete by id
-    @DeleteMapping("/members/{id}")
-    public void deleteMember(@PathVariable int id) {
-        service.deleteMemberById(id);
+    @PutMapping("/{id}")
+    public ResponseEntity<MemberDto> updateMember(@PathVariable Long id, @RequestBody MemberDto memberDto) {
+        memberDto.setId(id);
+        return ResponseEntity.ok(memberService.updateMember(memberDto));
     }
 
-    // add new video
-    // POST {name:"...", videoId"..."} memberId will auto generate
-    @PostMapping("/members")
-    public ResponseEntity<MemberDto> addNewMember(@RequestBody MemberDto member) {
-        MemberDto saveMember = service.addMember(member);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(saveMember.getMemberId())
-                .toUri();
-        return ResponseEntity.created(location).build();
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteMember(@PathVariable Long id) {
+        memberService.deleteMember(id);
+        return ResponseEntity.ok().build();
     }
-
-    @PutMapping("/members/{id}")
-    public ResponseEntity<MemberDto> updateMemberVideoId(@PathVariable Integer id, @RequestBody MemberDto member) {
-        MemberDto updateMemberVideo = service.changeMemberVideoId(Integer.valueOf(id), member.getVideoId());
-        if (updateMemberVideo != null) {
-            return new ResponseEntity<>(updateMemberVideo, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
 }

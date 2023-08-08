@@ -10,20 +10,24 @@ import com.example.videostore.blockbuster.dto.*;
 import com.example.videostore.blockbuster.controller.*;
 import com.example.videostore.blockbuster.service.*;
 
-@Component
-public class VideoDaoService {
+import io.swagger.v3.oas.annotations.servers.Server;
+
+@Server
+public class VideoService {
 
     private static List<VideoDto> videos = new ArrayList<>();
 
-    private static int videoIdCount = 0;
+    // private static int videoIdCount = 0;
 
-    static {
-        videos.add(new VideoDto(++videoIdCount, "Madagascar", "Available"));
-        videos.add(new VideoDto(++videoIdCount, "Madagascar: Escape 2 Africa", "Rented"));
-        videos.add(new VideoDto(++videoIdCount, "Madagascar 3: Europes Most Wanted", "Available"));
-        videos.add(new VideoDto(++videoIdCount, "Madly Madagascar", "Available"));
-        videos.add(new VideoDto(++videoIdCount, "Penguins of Madagascar", "Rented"));
-    }
+    // static {
+    // videos.add(new VideoDto(++videoIdCount, "Madagascar", "Available"));
+    // videos.add(new VideoDto(++videoIdCount, "Madagascar: Escape 2 Africa",
+    // "Rented"));
+    // videos.add(new VideoDto(++videoIdCount, "Madagascar 3: Europes Most Wanted",
+    // "Available"));
+    // videos.add(new VideoDto(++videoIdCount, "Madly Madagascar", "Available"));
+    // videos.add(new VideoDto(++videoIdCount, "Penguins of Madagascar", "Rented"));
+    // }
 
     // add new video
     public VideoDto addVideo(VideoDto video) {

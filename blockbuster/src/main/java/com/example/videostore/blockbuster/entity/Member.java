@@ -10,7 +10,7 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long memberId;
+    private Long id;
 
     @Column
     private String memberName;

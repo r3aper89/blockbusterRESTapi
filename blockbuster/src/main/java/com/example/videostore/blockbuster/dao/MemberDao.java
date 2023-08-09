@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MemberDao {
 
-    public Object findById(Long id) {
-        return null;
-    }
+    // public Object findById(Long id) {
+    // return null;
+    // }
 
     // private NamedParameterJdbcTemplate jdbcTemplate;
 
@@ -21,7 +21,7 @@ public class MemberDao {
     // String sql = "SELECT * FROM members";
     // return jdbcTemplate.query(sql, (rs, rowNum) -> {
     // MemberDto member = new MemberDto();
-    // member.setMemberId(rs.getInt("member_id"));
+    // member.setId(rs.getInt("member_id"));
     // member.setMemberName(rs.getString("member_name"));
     // member.setVideoId(rs.getInt("video_id"));
     // return member;

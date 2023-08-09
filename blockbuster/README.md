@@ -79,7 +79,7 @@ the controller class creates paths to localhost/members and localhost/videos are
 /dto
 the DTO (data transfer object) class houses schema objects for the table.
 Video(int videoId, String title, String status)
-Member(int memberId, String name, int videoId)
+Member(int id, String name, int videoId)
 
 /services
 the services class is a combination of the DAO and service layer.
@@ -105,7 +105,7 @@ orileys course master jave web; chapter 6 steps 1-8.
 Goal use a response entity on the Dto class
 
 ## task 1
-- ✅increment videoId and memberId automatically
+- ✅increment videoId and id automatically
   
 - ✅list all member or videos
   - GET /members
@@ -171,7 +171,7 @@ DTOs (Data Transfer Objects): These are used to transfer data between processes 
 ```java
 public class MemberDto {
     // variables
-    private Integer memberId;
+    private Integer id;
     private String name;
     private Integer videoId;
 }

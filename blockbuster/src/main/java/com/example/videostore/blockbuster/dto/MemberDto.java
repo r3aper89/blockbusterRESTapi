@@ -7,7 +7,7 @@ import lombok.*;
 public class MemberDto {
 
     // variables
-    private Long memberId;
+    private Long id;
     private String memberName;
     private Long videoId;
 

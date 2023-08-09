@@ -5,7 +5,7 @@
 inserts data into the database using SQL.
 
 ```sql
-insert into members (memberId, memberName, videoId)
+insert into members (id, memberName, videoId)
 values (1, 'James', '5');
 ```
 

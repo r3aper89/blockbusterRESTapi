@@ -1,31 +1,22 @@
 # springboot-blockbuster
-This project is a springboot project that simulates a BlockBuster video store. where members can rent a movie and return it.
 
-The project is divided into small steps. Below you can find the steps and the description of each step. Each step is saved as a git branch, switch branch to see the progress of each step.
+## Step 1: describe
+    Description: simulates blockbuster video store
+    Database: 
+    videos -> movie titles
+    videos -> type (dvd, hvs)
+    videos -> status (rented, available)
 
-## Step 1 - describe
-describe the overarching project.
+## Step 2 – branch setup project (make sure it builds)
 
-## Step 2 – setup project (make sure it builds)
-use springboot initializer (website) to create a project.
-add folders (repository, entities, services, controllers, dtos, adapters).
-on github add branches for each step.
-make sure the project builds.
+## step 3 – branch dto design all dtos
 
-## step 3 – dto design all dtos
-design all dtos for the project.
+## Step 4 - branch add controllers with swagger using dtos
+	i. Service layer added with di which returns hardcoded responses (check it build and works with swagger)
 
-## Step 4 - add controllers with swagger using dtos
-Service layer added which returns hardcoded responses (check it build and works with swagger)
+## Step 5 – branch dao
+	I. Implement doa and replace service hardcoding with hardcoding in dao
 
-## Step 5 – dao
-Implement doa and replace service hardcoding with hardcoding in dao
-
-## Step 6 – database
-Use JPA to design entities and replace dao hardcoding with jpa repositories
-
-# resources
-Master Java Web Services and REST API with Spring Boot
-https://learning.oreilly.com/videos/master-java-web/
-
-https://github.com/packtpublishing/master-java-web-services-and-rest-api-with-spring-boot
+## Step 6 – branch database
+	i. Use JPA to design entities 
+	ii. Replace dao hardcoding with jpa repositories

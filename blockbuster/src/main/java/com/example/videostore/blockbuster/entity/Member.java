@@ -5,7 +5,7 @@ import jakarta.persistence.*; //fromally javax
 
 @Data
 @Entity
-@Table(name = "MEMBERS")
+@Table(name = "members")
 public class Member {
 
     @Id

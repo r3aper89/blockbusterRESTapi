@@ -3,10 +3,10 @@ package com.example.videostore.blockbuster.controller;
 //local
 import com.example.videostore.blockbuster.dto.*;
 import com.example.videostore.blockbuster.service.*;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.http.ResponseEntity;
 
-//interact with the browser 
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 
 @RestController
 @RequestMapping("/members")
@@ -14,6 +14,7 @@ public class MemberController {
 
     public final MemberService memberService;
 
+    @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 //interact with the database
 
-@Repository
+//@Repository
 public class MemberDao {
 
     // public Object findById(Long id) {

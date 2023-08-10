@@ -1,6 +1,6 @@
 package com.example.videostore.blockbuster.controller;
 
-import com.example.videostore.blockbuster.dao.MemberDao;
+import com.example.videostore.blockbuster.dao.JdbcMemberDao;
 //local
 import com.example.videostore.blockbuster.dto.*;
 import com.example.videostore.blockbuster.service.*;
@@ -20,7 +20,9 @@ public class MemberController {
     private MemberService memberService;
 
     @Autowired
-    private MemberDao memberDao;
+    private JdbcMemberDao memberDao;
+
+
 
     @PostMapping
     public ResponseEntity<MemberDto> createMember(@RequestBody MemberDto memberDto) {

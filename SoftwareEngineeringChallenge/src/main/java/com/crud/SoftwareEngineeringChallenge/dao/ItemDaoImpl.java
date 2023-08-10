@@ -40,5 +40,4 @@ public class ItemDaoImpl implements ItemDao {
         return null;
     }
 
-    // ... other implementations of the interface methods
 }

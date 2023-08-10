@@ -10,21 +10,19 @@ import org.springframework.stereotype.Component;
 @Component
 public class ItemAdapter {
 
-    // Converts an Item object to an ItemDto object.
-    public ItemDto entityToDto(Item item) {
-        ItemDto dto = new ItemDto();
-        dto.setId(item.getId());
-        dto.setName(item.getName());
-        dto.setDescription(item.getDescription());
-        return dto;
-    }
-
-    // Converts an ItemDto object to an Item object.
-    public Item dtoToEntity(ItemDto dto) {
+    public static Item dtoToEntity(ItemDto itemDto) {
         Item item = new Item();
-        item.setName(dto.getName());
-        item.setDescription(dto.getDescription());
+        item.setId(itemDto.getId());
+        item.setName(itemDto.getName());
+        item.setDescription(itemDto.getDescription());
         return item;
     }
 
+    public static ItemDto entityToDto(Item item) {
+        ItemDto itemDto = new ItemDto();
+        itemDto.setId(item.getId());
+        itemDto.setName(item.getName());
+        itemDto.setDescription(item.getDescription());
+        return itemDto;
+    }
 }
